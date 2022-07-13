@@ -4,11 +4,7 @@ conn = sqlite3.connect('abc.db')
 cursor = conn.cursor()
 cursor.execute('CREATE TABLE IF NOT EXISTS table_1(id INTEGER PRIMARY KEY, col_1 TEXT)')
 cursor.execute('CREATE TABLE IF NOT EXISTS table_2(id INTEGER PRIMARY KEY, col_1 INTEGER)')
-cursor.execute('SELECT * FROM table_1')
-k = cursor.fetchall()
-cursor.execute('SELECT * FROM table_2')
-m = cursor.fetchall()
-b = len(m)
+
 def slovo(a):
     cursor.execute('INSERT INTO table_1(col_1) VALUES (?)', (a, ))
     conn.commit()
@@ -36,6 +32,13 @@ for i in list_1:
         slovo(i)
     else:
         chyslo(i)
+
+cursor.execute('SELECT * FROM table_1')
+k = cursor.fetchall()
+cursor.execute('SELECT * FROM table_2')
+m = cursor.fetchall()
+b = len(m)
+
 table()
 print(k)
 print(m)

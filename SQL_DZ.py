@@ -37,11 +37,6 @@ for i in list_1:
     else:
         chyslo(i)
 table()
-b = len(m)
-cursor.execute('SELECT * FROM table_1')
-k = cursor.fetchall()
-cursor.execute('SELECT * FROM table_2')
-m = cursor.fetchall()
 print(k)
 print(m)
 
